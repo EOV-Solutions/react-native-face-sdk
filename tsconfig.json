@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "rootDir": "./src",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "jsx": "react-native",
+        "lib": [
+            "ES2017"
+        ],
+        "moduleResolution": "node",
+        "noEmit": true,
+        "strict": true,
+        "target": "esnext",
+        "skipLibCheck": true,
+        "declaration": true,
+        "declarationDir": "./lib/typescript"
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "node_modules",
+        "lib",
+        "android",
+        "ios"
+    ]
+}
