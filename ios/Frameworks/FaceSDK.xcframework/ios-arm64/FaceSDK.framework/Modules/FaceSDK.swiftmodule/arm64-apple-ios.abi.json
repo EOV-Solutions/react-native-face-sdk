@@ -18090,6 +18090,13 @@
       "value": "1"
     },
     {
+      "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMLiveRecognitionViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 54244,
+      "length": 3,
+      "value": "100"
+    },
+    {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepGraphicOverlay.swift",
       "kind": "BooleanLiteral",
       "offset": 336,
