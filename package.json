@@ -1,0 +1,49 @@
+{
+    "name": "react-native-face-sdk",
+    "version": "1.0.0",
+    "description": "React Native module for Face Recognition SDK with enrollment, recognition, and license management",
+    "main": "src/index.ts",
+    "types": "src/types.ts",
+    "react-native": "src/index.ts",
+    "source": "src/index.ts",
+    "scripts": {
+        "typescript": "tsc --noEmit",
+        "test": "echo \"No tests yet\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/EOV-Solutions/react-native-face-sdk.git"
+    },
+    "keywords": [
+        "react-native",
+        "face-recognition",
+        "face-sdk",
+        "attendance",
+        "biometric",
+        "liveness"
+    ],
+    "author": "EOV Solutions",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/EOV-Solutions/react-native-face-sdk/issues"
+    },
+    "homepage": "https://github.com/EOV-Solutions/react-native-face-sdk#readme",
+    "peerDependencies": {
+        "react": "*",
+        "react-native": ">=0.60.0"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "@types/react-native": "^0.72.0",
+        "react": "^18.0.0",
+        "react-native": "^0.73.0",
+        "typescript": "^5.0.0"
+    },
+    "files": [
+        "src",
+        "android",
+        "ios",
+        "*.podspec",
+        "README.md"
+    ]
+}

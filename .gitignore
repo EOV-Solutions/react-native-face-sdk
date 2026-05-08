@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+lib/
+*.js
+*.d.ts
+*.map
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Android
+android/.gradle/
+android/build/
+android/.settings/
+
+# iOS
+ios/Pods/
+ios/build/
+
+# Misc
+.DS_Store
+*.log
