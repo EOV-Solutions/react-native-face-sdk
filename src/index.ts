@@ -258,7 +258,7 @@ const FaceSDK = {
 
   /**
    * Check if the current device is compatible with the Face SDK.
-   * Verifies: front camera, OS version, CPU architecture (arm64), RAM, available storage.
+    * Verifies: front camera, OS version, CPU architecture, RAM, available storage.
    * Call this BEFORE initialize() to give users early feedback
    * if their device cannot run face recognition.
    */

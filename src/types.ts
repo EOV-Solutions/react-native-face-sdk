@@ -116,7 +116,7 @@ export interface DeviceCompatibilityResult {
     hasFrontCamera: boolean;
     /** OS version meets minimum requirement (Android 7+ / iOS 12+) */
     osVersionSupported: boolean;
-    /** CPU architecture supports arm64 (required for AI models) */
+    /** CPU architecture supports Android arm64-v8a/armeabi-v7a or iOS arm64 (required for AI models) */
     cpuArchSupported: boolean;
     /** Device has enough RAM (>= 2GB) */
     hasEnoughRAM: boolean;

@@ -221,7 +221,7 @@ console.log('Storage:', compat.availableStorage, 'MB');
 const { checks } = compat;
 console.log('Front camera:', checks.hasFrontCamera);
 console.log('OS supported:', checks.osVersionSupported);
-console.log('CPU arm64:', checks.cpuArchSupported);
+console.log('CPU ABI supported:', checks.cpuArchSupported);
 console.log('RAM >= 2GB:', checks.hasEnoughRAM);
 console.log('Storage >= 100MB:', checks.hasEnoughStorage);
 
@@ -336,7 +336,7 @@ interface DeviceCompatibilityResult {
   checks: {
     hasFrontCamera: boolean;    // Front camera available
     osVersionSupported: boolean; // Android 7+ / iOS 12+
-    cpuArchSupported: boolean;   // arm64
+    cpuArchSupported: boolean;   // Android arm64-v8a/armeabi-v7a, iOS arm64
     hasEnoughRAM: boolean;       // >= 2GB
     hasEnoughStorage: boolean;   // >= 100MB free
   };

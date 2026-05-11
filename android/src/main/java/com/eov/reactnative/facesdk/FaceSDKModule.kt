@@ -417,10 +417,10 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
             val osVersionSupported = Build.VERSION.SDK_INT >= 24
             if (!osVersionSupported) unsupportedReasons.add("Android API ${Build.VERSION.SDK_INT} is below minimum (24 / Android 7.0)")
 
-            // 3. Check CPU architecture (arm64-v8a required for AI models)
+            // 3. Check CPU architecture (arm64-v8a or armeabi-v7a required for AI models)
             val supportedAbis = Build.SUPPORTED_ABIS?.toList() ?: emptyList()
-            val cpuArchSupported = supportedAbis.any { it.contains("arm64") }
-            if (!cpuArchSupported) unsupportedReasons.add("CPU architecture ${supportedAbis.joinToString()} does not include arm64-v8a")
+            val cpuArchSupported = supportedAbis.any { it == "arm64-v8a" || it == "armeabi-v7a" }
+            if (!cpuArchSupported) unsupportedReasons.add("CPU architecture ${supportedAbis.joinToString()} does not include arm64-v8a or armeabi-v7a")
 
             // 4. Check RAM (>= 2GB)
             val activityManager = context.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
