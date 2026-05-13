@@ -73,6 +73,12 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
         val faceId = options.getString("faceId")
         val userName = options.getString("userName")
         val orgId = options.getString("orgId")
+        val onPremiseServerUrl = options.getString("onPremiseServerUrl")
+        val tenantId = if (options.hasKey("tenant_id")) {
+            options.getString("tenant_id")
+        } else {
+            options.getString("tenantId")
+        }
 
         // Set userName before license activation (it will be saved with the license)
         if (!userName.isNullOrEmpty()) {
@@ -84,6 +90,8 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
                 reactApplicationContext,
                 licenseKey,
                 faceId,
+                onPremiseServerUrl,
+                tenantId,
                 object : FaceSDK.LicenseCallback {
                     override fun onSuccess() {
                         // Initialize SDK after license

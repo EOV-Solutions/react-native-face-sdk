@@ -78,12 +78,19 @@ const result = await FaceSDK.initialize({
   licenseKey: 'YOUR_LICENSE_KEY',
   faceId: 'user-123',           // Will be used as userId in registration
   userName: 'John Doe',         // Will be used as userName in registration
+  onPremiseServerUrl: 'https://customer.example.com', // optional, force ON_PREMISE Face APIs
+  tenant_id: 'tenant_001',      // optional, sent in ON_PREMISE register-batch
 });
 
 if (result.success) {
   console.log('SDK initialized successfully');
   console.log('Organization:', result.orgId); // orgId returned from license server
 }
+
+// If onPremiseServerUrl is provided, the SDK stores license_mode=ON_PREMISE
+// and uses that URL for Face APIs. License activation/verification still goes
+// to the central EOV license server.
+// If tenant_id is provided, register-batch sends it as tenant_id in ON_PREMISE mode.
 
 // initialize() may return before background enrollment sync finishes.
 // Wait briefly before treating a local false enrollment check as final.
@@ -260,6 +267,8 @@ interface InitializeOptions {
   licenseKey: string;       // License key (required)
   faceId?: string;          // Used as userId in registration
   userName?: string;        // Used as userName in registration
+  onPremiseServerUrl?: string; // Optional customer/on-premise Face API base URL
+  tenant_id?: string;       // Optional tenant ID for ON_PREMISE register-batch
 }
 
 interface InitializeResult {

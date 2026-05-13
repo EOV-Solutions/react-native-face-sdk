@@ -139,6 +139,8 @@ const initSDK = async () => {
       licenseKey: 'YOUR_LICENSE_KEY',  // License key từ EOV
       faceId: 'user-12345',            // ID định danh người dùng
       userName: 'Nguyễn Văn A',        // Tên hiển thị
+      onPremiseServerUrl: 'https://customer.example.com', // Optional: ép Face APIs dùng server on-premise
+      tenant_id: 'tenant_001',         // Optional: gửi trong register-batch khi ON_PREMISE
     });
 
     if (result.success) {
@@ -294,6 +296,8 @@ interface InitializeOptions {
   licenseKey: string;   // License key (bắt buộc)
   faceId?: string;      // ID user (dùng cho đăng ký)
   userName?: string;    // Tên hiển thị
+  onPremiseServerUrl?: string; // URL customer/on-premise cho Face APIs
+  tenant_id?: string;   // Tenant ID gửi trong register-batch khi ON_PREMISE
 }
 ```
 
@@ -448,7 +452,7 @@ interface RecognitionResult {
 - **Cloud:** Server của EOV (SAAS_CLOUD mode) hoặc server riêng của khách hàng (ON_PREMISE mode)
 
 ### Q: Có hỗ trợ server on-premise không?
-**A:** Có. Khi cấu hình license key với mode ON_PREMISE, SDK sẽ gửi dữ liệu đến server của khách hàng thay vì cloud của EOV.
+**A:** Có. App có thể truyền `onPremiseServerUrl` khi `initialize()` để SDK lưu `license_mode=ON_PREMISE` và gửi Face APIs đến server khách hàng. Nếu cần tenant routing, truyền thêm `tenant_id`; SDK sẽ gửi field này trong `register-batch` khi đang ON_PREMISE. Nếu không truyền URL này, SDK sẽ dùng `customer_server_url` do license server trả về khi license ở mode ON_PREMISE.
 
 ### Q: Cần bao nhiêu ảnh để đăng ký?
 **A:** SDK yêu cầu 5 ảnh ở 5 góc khác nhau (thẳng, trái, phải, trên, dưới) để đảm bảo độ chính xác cao khi nhận diện.

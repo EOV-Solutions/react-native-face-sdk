@@ -50,6 +50,8 @@ class RNFaceSDK: RCTEventEmitter {
         let faceId = options["faceId"] as? String
         let userName = options["userName"] as? String
         let orgId = options["orgId"] as? String
+        let onPremiseServerUrl = options["onPremiseServerUrl"] as? String
+        let tenantId = (options["tenant_id"] as? String) ?? (options["tenantId"] as? String)
         
         // Set userName to LicenseManager before license activation
         // This is needed for registration flow to retrieve userName
@@ -58,7 +60,7 @@ class RNFaceSDK: RCTEventEmitter {
         }
         
         // Step 1: Activate license (like Android FaceSDK.initializeLicense)
-        licenseManager.activate(licenseKey: licenseKey, faceId: faceId) { [weak self] licenseResult in
+        licenseManager.activate(licenseKey: licenseKey, faceId: faceId, onPremiseServerUrl: onPremiseServerUrl, tenantId: tenantId) { [weak self] licenseResult in
             guard let self = self else { return }
             
             switch licenseResult {

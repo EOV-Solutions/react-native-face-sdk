@@ -66,6 +66,8 @@ const FaceSDK = {
    * @param options.licenseKey - License key from server
    * @param options.faceId - Optional face ID (used as userId in registration)
    * @param options.userName - Optional user name (used in registration)
+   * @param options.onPremiseServerUrl - Optional customer/on-premise Face API base URL
+   * @param options.tenant_id - Optional tenant ID for ON_PREMISE register-batch
    */
   async initialize(options: InitializeOptions): Promise<InitializeResult> {
     // Store init data for use in registration
