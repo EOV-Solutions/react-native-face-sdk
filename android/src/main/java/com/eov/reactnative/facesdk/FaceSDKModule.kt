@@ -11,6 +11,7 @@ import android.hardware.camera2.CameraManager
 import android.os.Build
 import android.os.Environment
 import android.os.StatFs
+import android.util.Base64
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
@@ -23,6 +24,8 @@ import com.facebook.react.modules.core.PermissionListener
 import com.eov.facesdk.FaceSDK
 import com.eov.facekit.ui.MultiStepRegisterActivity
 import com.eov.facekit.ui.LiveRecognitionActivity
+
+import java.io.File
 
 /**
  * React Native Module for Face SDK
@@ -143,6 +146,32 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
     }
 
     @ReactMethod
+    fun setOrganization(orgId: String, promise: Promise) {
+        try {
+            FaceSDK.getInstance().setOrganization(orgId)
+            promise.resolve(Arguments.createMap().apply {
+                putBoolean("success", true)
+            })
+        } catch (e: Exception) {
+            promise.reject("E_SET_ORG_FAILED", e.message)
+        }
+    }
+
+    @ReactMethod
+    fun getLicenseInfo(promise: Promise) {
+        try {
+            val status = FaceSDK.getLicenseStatus()
+            promise.resolve(Arguments.createMap().apply {
+                putBoolean("isValid", FaceSDK.isLicenseValid())
+                putInt("status", status)
+                putString("message", FaceSDK.getStatusMessage(status))
+            })
+        } catch (e: Exception) {
+            promise.reject("E_LICENSE_INFO_FAILED", e.message)
+        }
+    }
+
+    @ReactMethod
     fun getLicenseStatus(promise: Promise) {
         try {
             promise.resolve(FaceSDK.getLicenseStatus())
@@ -190,6 +219,11 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
         val activity = reactApplicationContext.currentActivity
         if (activity == null) {
             promise.reject("E_NO_ACTIVITY", "Activity is null")
+            return
+        }
+
+        if (!FaceSDK.getInstance().isInitialized()) {
+            promise.reject("E_NOT_INITIALIZED", "SDK not initialized")
             return
         }
 
@@ -292,6 +326,11 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
         val activity = reactApplicationContext.currentActivity
         if (activity == null) {
             promise.reject("E_NO_ACTIVITY", "Activity is null")
+            return
+        }
+
+        if (!FaceSDK.getInstance().isInitialized()) {
+            promise.reject("E_NOT_INITIALIZED", "SDK not initialized")
             return
         }
 
@@ -594,6 +633,21 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
             val isLive = data.getBooleanExtra(LiveRecognitionActivity.EXTRA_IS_LIVE, false)
             val isRecognized = data.getBooleanExtra(LiveRecognitionActivity.EXTRA_IS_RECOGNIZED, false)
             val imagePath = data.getStringExtra(LiveRecognitionActivity.EXTRA_IMAGE_PATH)
+            val imageBase64 = if (!imagePath.isNullOrEmpty()) {
+                try {
+                    val imageFile = File(imagePath)
+                    if (imageFile.exists()) {
+                        "data:image/jpeg;base64," + Base64.encodeToString(imageFile.readBytes(), Base64.NO_WRAP)
+                    } else {
+                        ""
+                    }
+                } catch (exception: Exception) {
+                    Log.w(TAG, "Failed to encode image to base64", exception)
+                    ""
+                }
+            } else {
+                ""
+            }
 
             promise.resolve(Arguments.createMap().apply {
                 putBoolean("success", true)
@@ -603,6 +657,7 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
                 userName?.let { putString("userName", it) }
                 putDouble("confidence", confidence.toDouble())
                 imagePath?.let { putString("imagePath", it) }
+                putString("imageBase64", imageBase64)
             })
         } else {
             val errorMessage = data?.getStringExtra(LiveRecognitionActivity.EXTRA_ERROR_MESSAGE)

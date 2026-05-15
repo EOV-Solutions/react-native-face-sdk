@@ -276,6 +276,7 @@ const cleanup = async () => {
 |--------|--------|--------|-------|
 | `initialize` | `InitializeOptions` | `InitializeResult` | Khởi tạo SDK với license key |
 | `isLicenseValid` | - | `LicenseResult` | Kiểm tra license còn hiệu lực |
+| `setOrganization` | `orgId: string` | `{success: boolean}` | Set organization đang hoạt động |
 | `getLicenseInfo` | - | `LicenseInfo` | Lấy thông tin chi tiết license |
 | `getLicenseStatus` | - | `number` | Lấy mã trạng thái license |
 | `startRegistration` | `RegistrationOptions?` | `RegistrationResult` | Bắt đầu đăng ký khuôn mặt |
@@ -337,6 +338,7 @@ interface RecognitionResult {
   userName?: string;     // Tên user
   confidence?: number;   // Độ tin cậy (0-1)
   imagePath?: string;    // Đường dẫn ảnh captured
+  imageBase64?: string;  // Ảnh JPEG dạng data:image/jpeg;base64,...
   error?: string;        // 'Recognition cancelled' khi user đóng camera, hoặc lỗi native
 }
 ```

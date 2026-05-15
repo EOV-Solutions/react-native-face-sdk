@@ -438,6 +438,12 @@ class RNFaceSDK: RCTEventEmitter {
             recognitionVC.onResult = { result in
                 // Use isRecognized from FMLiveRecognitionResult directly
                 // The SDK sets isRecognized based on confidence >= threshold (0.50)
+                var imageBase64 = ""
+                if let path = result.imagePath,
+                   let data = try? Data(contentsOf: URL(fileURLWithPath: path)) {
+                    imageBase64 = "data:image/jpeg;base64," + data.base64EncodedString()
+                }
+
                 resolve([
                     "success": true,
                     "isLive": result.isLive,
@@ -445,7 +451,8 @@ class RNFaceSDK: RCTEventEmitter {
                     "userId": result.userId ?? "",
                     "userName": result.userName,
                     "confidence": result.confidence,
-                    "imagePath": result.imagePath ?? ""
+                    "imagePath": result.imagePath ?? "",
+                    "imageBase64": imageBase64
                 ])
             }
             

@@ -247,6 +247,8 @@ if (!compat.compatible) {
 |--------|-------------|---------|
 | `initialize(options)` | Initialize SDK with license key | `InitializeResult` |
 | `isLicenseValid()` | Check license validity | `LicenseResult` |
+| `setOrganization(orgId)` | Set active organization ID | `{ success: boolean }` |
+| `getLicenseInfo()` | Get detailed license information | `LicenseInfo` |
 | `getLicenseStatus()` | Get numeric license status code | `number` |
 | `startRegistration(options?)` | Start multi-pose face registration | `RegistrationResult` |
 | `isUserEnrolled(userId)` | Check if user is enrolled locally | `boolean` |
@@ -315,6 +317,7 @@ interface RecognitionResult {
   userName?: string;
   confidence?: number;      // 0–1 similarity score
   imagePath?: string;       // Path to captured face image
+  imageBase64?: string;     // Base64-encoded JPEG image (data:image/jpeg;base64,...)
   error?: string;           // 'Recognition cancelled' on user close, or native error message
 }
 

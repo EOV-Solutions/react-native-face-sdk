@@ -91,6 +91,8 @@ export interface RecognitionResult {
   confidence?: number;
   /** Path to captured face image */
   imagePath?: string;
+  /** Base64-encoded JPEG image (data:image/jpeg;base64,...) */
+  imageBase64?: string;
   error?: string;
 }
 
@@ -160,7 +162,7 @@ export interface FaceSDKInterface {
   
   // Sync
   /** Refresh embeddings: delete local data and re-download from server */
-  refreshEmbeddings(faceId: string): Promise<RefreshResult>;
+  refreshEmbeddings(faceId?: string): Promise<RefreshResult>;
   
   // Recognition
   startRecognition(options?: RecognitionOptions): Promise<RecognitionResult>;

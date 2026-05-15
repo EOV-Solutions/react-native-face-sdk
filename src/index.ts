@@ -86,6 +86,13 @@ const FaceSDK = {
   },
 
   /**
+   * Set active organization ID
+   */
+  setOrganization(orgId: string): Promise<{ success: boolean }> {
+    return FaceSDKNative.setOrganization(orgId);
+  },
+
+  /**
    * Get detailed license information
    */
   getLicenseInfo(): Promise<LicenseInfo> {
