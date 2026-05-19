@@ -12,7 +12,7 @@ export interface InitializeOptions {
   userName?: string;
   /** Optional customer/on-premise Face API base URL. Forces license_mode=ON_PREMISE for Face APIs. */
   onPremiseServerUrl?: string;
-  /** Optional tenant ID. Sent as tenant_id in register-batch when license_mode is ON_PREMISE. */
+  /** Optional tenant ID for On-Premise Face APIs. If omitted, check/download use legacy path URLs. */
   tenant_id?: string;
   /** Optional camelCase alias for tenant_id. */
   tenantId?: string;
@@ -54,7 +54,7 @@ export interface RegistrationOptions {
   userName?: string;
   /** Skip name dialog and use provided userName directly */
   skipNameDialog?: boolean;
-  /** Registration mode: 'create_only' (fail if exists), 'upsert' (update if exists, default), 'overwrite' (delete + insert) */
+  /** Registration mode: 'create_only' (fail if exists), 'upsert' (update if exists), 'overwrite' (delete + insert, default) */
   mode?: 'create_only' | 'upsert' | 'overwrite';
 }
 

@@ -180,7 +180,7 @@ const registerFace = async () => {
   // Bắt đầu đăng ký
   const result = await FaceSDK.startRegistration({
     skipNameDialog: true,  // Bỏ qua dialog nhập tên
-    mode: 'upsert',     // 'create_only' | 'upsert' (mặc định) | 'overwrite'
+    mode: 'overwrite',  // 'create_only' | 'upsert' | 'overwrite' (mặc định)
   });
 
   if (result.success) {
@@ -308,15 +308,15 @@ interface RegistrationOptions {
   userId?: string;         // Override userId
   userName?: string;       // Override userName
   skipNameDialog?: boolean; // Bỏ qua dialog nhập tên
-  mode?: 'create_only' | 'upsert' | 'overwrite'; // Chế độ đăng ký (mặc định: 'upsert')
+  mode?: 'create_only' | 'upsert' | 'overwrite'; // Chế độ đăng ký (mặc định: 'overwrite')
 }
 ```
 
 **Chế độ đăng ký (Registration Mode):**
 | Mode | User đã tồn tại | User chưa tồn tại |
 |------|-----------------|--------------------|
-| `overwrite` | Xóa toàn bộ + đăng ký lại | Đăng ký mới |
-| `upsert` | (Mặc định) Cập nhật embeddings (giữ user record) | Đăng ký mới |
+| `overwrite` | (Mặc định) Xóa toàn bộ + đăng ký lại | Đăng ký mới |
+| `upsert` | Cập nhật embeddings (giữ user record) | Đăng ký mới |
 | `create_only` | Lỗi, không cho đăng ký | Đăng ký mới |
 
 #### RecognitionOptions

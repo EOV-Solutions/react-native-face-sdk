@@ -174,7 +174,7 @@ public struct FMImportResult {
   #endif
   public func importUsers(_ users: [FaceSDK.FMImportUserRequest], completion: @escaping FaceSDK.FMFaceSDK.ImportCallback)
   #if compiler(>=5.3) && $NonescapableTypes
-  public func registerUser(userId: Swift.String, name: Swift.String, embeddings: [[Swift.Float]], images: [Foundation.Data?] = [], mode: Swift.String = "upsert", completion: @escaping (Swift.Result<Swift.Void, FaceSDK.FMSDKError>) -> Swift.Void)
+  public func registerUser(userId: Swift.String, name: Swift.String, embeddings: [[Swift.Float]], images: [Foundation.Data?] = [], mode: Swift.String = "overwrite", completion: @escaping (Swift.Result<Swift.Void, FaceSDK.FMSDKError>) -> Swift.Void)
   #endif
   public func isUserEnrolled(_ userId: Swift.String) -> Swift.Bool
   public func deleteUser(_ userId: Swift.String) -> Swift.Bool
@@ -405,6 +405,7 @@ extension FaceSDK.FMLiveRecognitionViewController : AVFoundation.AVCaptureVideoD
   @_Concurrency.MainActor @preconcurrency public var userName: Swift.String?
   @_Concurrency.MainActor @preconcurrency public var registrationMode: Swift.String
   @_Concurrency.MainActor @preconcurrency public var onComplete: (([[Swift.Float]]) -> Swift.Void)?
+  @_Concurrency.MainActor @preconcurrency public var onError: ((Swift.String) -> Swift.Void)?
   @_Concurrency.MainActor @preconcurrency public var onDismiss: (() -> Swift.Void)?
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @objc deinit
@@ -474,6 +475,9 @@ public enum FMSDKError : Swift.Error, Foundation.LocalizedError {
     get
   }
   #endif
+  public var rawMessage: Swift.String {
+    get
+  }
   public var errorCode: Swift.Int {
     get
   }

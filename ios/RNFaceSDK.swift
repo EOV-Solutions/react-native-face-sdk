@@ -301,9 +301,7 @@ class RNFaceSDK: RCTEventEmitter {
             let registerVC = FMMultiStepRegisterViewController()
             registerVC.userName = userName
             registerVC.userId = userId
-            if let mode = options["mode"] as? String {
-                registerVC.registrationMode = mode
-            }
+            registerVC.registrationMode = (options["mode"] as? String) ?? "overwrite"
             
             // Set completion handlers
             registerVC.onComplete = { embeddings in
@@ -315,6 +313,14 @@ class RNFaceSDK: RCTEventEmitter {
                     "orgId": orgId ?? "",
                     "featureCount": embeddings.count,
                     "serverSynced": true
+                ])
+            }
+
+            registerVC.onError = { error in
+                resolve([
+                    "success": false,
+                    "error": error,
+                    "serverSynced": false
                 ])
             }
             

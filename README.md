@@ -108,7 +108,7 @@ console.log('Enrollment synced locally:', enrolled);
 // orgId is automatically managed by SDK from license server
 const result = await FaceSDK.startRegistration({
   skipNameDialog: true,
-  mode: 'upsert', // 'create_only' | 'upsert' (default) | 'overwrite'
+  mode: 'overwrite', // 'create_only' | 'upsert' | 'overwrite' (default)
 });
 
 if (result.success) {
@@ -122,8 +122,8 @@ if (result.success) {
 **Registration Modes:**
 | Mode | User EXISTS | User NOT EXISTS |
 |------|-------------|------------------|
-| `overwrite` | Delete all data + insert new | Insert |
-| `upsert` | (Default) Update embeddings (keep user record) | Insert |
+| `overwrite` | (Default) Delete all data + insert new | Insert |
+| `upsert` | Update embeddings (keep user record) | Insert |
 | `create_only` | Reject with error | Insert |
 
 ### Face Recognition
@@ -290,7 +290,7 @@ interface RegistrationOptions {
   userId?: string;          // Defaults to faceId from initialize()
   userName?: string;        // Defaults to userName from initialize()
   skipNameDialog?: boolean; // Skip name input dialog
-  mode?: 'create_only' | 'upsert' | 'overwrite'; // Registration mode (default: 'upsert')
+  mode?: 'create_only' | 'upsert' | 'overwrite'; // Registration mode (default: 'overwrite')
 }
 
 interface RegistrationResult {

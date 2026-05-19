@@ -120,7 +120,7 @@ const FaceSDK = {
       userId: options.userId ?? _initData.faceId,
       userName: options.userName ?? _initData.userName,
       skipNameDialog: options.skipNameDialog,
-      mode: options.mode,
+      mode: options.mode ?? 'overwrite',
     };
     return FaceSDKNative.startRegistration(mergedOptions);
   },

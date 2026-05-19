@@ -77,10 +77,10 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
         val userName = options.getString("userName")
         val orgId = options.getString("orgId")
         val onPremiseServerUrl = options.getString("onPremiseServerUrl")
-        val tenantId = if (options.hasKey("tenant_id")) {
-            options.getString("tenant_id")
-        } else {
-            options.getString("tenantId")
+        val tenantId = when {
+            options.hasKey("tenant_id") -> options.getString("tenant_id")
+            options.hasKey("tenantId") -> options.getString("tenantId")
+            else -> null
         }
 
         // Set userName before license activation (it will be saved with the license)
@@ -259,9 +259,8 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
             if (options.hasKey("skipNameDialog")) {
                 intent.putExtra(MultiStepRegisterActivity.EXTRA_SKIP_NAME_DIALOG, options.getBoolean("skipNameDialog"))
             }
-            if (options.hasKey("mode")) {
-                intent.putExtra(MultiStepRegisterActivity.EXTRA_REGISTRATION_MODE, options.getString("mode"))
-            }
+            val registrationMode = if (options.hasKey("mode")) options.getString("mode") else MultiStepRegisterActivity.MODE_OVERWRITE
+            intent.putExtra(MultiStepRegisterActivity.EXTRA_REGISTRATION_MODE, registrationMode)
 
             activity.startActivityForResult(intent, REQUEST_REGISTRATION)
         } catch (e: Exception) {
@@ -604,6 +603,7 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
             val userId = data.getStringExtra(MultiStepRegisterActivity.EXTRA_RESULT_USER_ID)
             val userName = data.getStringExtra(MultiStepRegisterActivity.EXTRA_RESULT_USER_NAME)
             val orgId = data.getStringExtra(MultiStepRegisterActivity.EXTRA_RESULT_ORG_ID)
+            val error = data.getStringExtra(MultiStepRegisterActivity.EXTRA_RESULT_ERROR)
             val featureCount = data.getIntExtra(MultiStepRegisterActivity.EXTRA_RESULT_FEATURE_COUNT, 0)
 
             promise.resolve(Arguments.createMap().apply {
@@ -611,6 +611,7 @@ class FaceSDKModule(reactContext: ReactApplicationContext) :
                 userId?.let { putString("userId", it) }
                 userName?.let { putString("userName", it) }
                 orgId?.let { putString("orgId", it) }
+                error?.let { putString("error", it) }
                 putInt("featureCount", featureCount)
             })
         } else {

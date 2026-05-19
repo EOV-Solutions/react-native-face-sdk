@@ -10442,6 +10442,154 @@
           },
           {
             "kind": "Var",
+            "name": "onError",
+            "printedName": "onError",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "((Swift.String) -> ())?",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> ()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Void",
+                        "printedName": "()"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvp",
+            "mangledName": "$s7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvp",
+            "moduleName": "FaceSDK",
+            "declAttributes": [
+              "HasInitialValue",
+              "Preconcurrency",
+              "Custom",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.String) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvg",
+                "mangledName": "$s7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvg",
+                "moduleName": "FaceSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "((Swift.String) -> ())?",
+                    "children": [
+                      {
+                        "kind": "TypeFunc",
+                        "name": "Function",
+                        "printedName": "(Swift.String) -> ()",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Void",
+                            "printedName": "()"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ]
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvs",
+                "mangledName": "$s7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvs",
+                "moduleName": "FaceSDK",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvM",
+                "mangledName": "$s7FaceSDK33FMMultiStepRegisterViewControllerC7onErrorySScSgvM",
+                "moduleName": "FaceSDK",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "onDismiss",
             "printedName": "onDismiss",
             "children": [
@@ -12454,6 +12602,46 @@
                 "declKind": "Accessor",
                 "usr": "s:7FaceSDK10FMSDKErrorO16errorDescriptionSSSgvg",
                 "mangledName": "$s7FaceSDK10FMSDKErrorO16errorDescriptionSSSgvg",
+                "moduleName": "FaceSDK",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "rawMessage",
+            "printedName": "rawMessage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:7FaceSDK10FMSDKErrorO10rawMessageSSvp",
+            "mangledName": "$s7FaceSDK10FMSDKErrorO10rawMessageSSvp",
+            "moduleName": "FaceSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:7FaceSDK10FMSDKErrorO10rawMessageSSvg",
+                "mangledName": "$s7FaceSDK10FMSDKErrorO10rawMessageSSvg",
                 "moduleName": "FaceSDK",
                 "accessorKind": "get"
               }
@@ -17428,16 +17616,16 @@
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/Swift\/FMFaceSDK.swift",
       "kind": "Array",
-      "offset": 8747,
+      "offset": 8741,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/Swift\/FMFaceSDK.swift",
       "kind": "StringLiteral",
-      "offset": 8774,
-      "length": 8,
-      "value": "\"upsert\""
+      "offset": 8768,
+      "length": 11,
+      "value": "\"overwrite\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/License\/FMLicenseManager.swift",
@@ -19361,475 +19549,489 @@
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
       "offset": 3164,
-      "length": 8,
-      "value": "\"upsert\""
+      "length": 11,
+      "value": "\"overwrite\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "Dictionary",
-      "offset": 3323,
+      "offset": 3326,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "Dictionary",
-      "offset": 3389,
+      "offset": 3392,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3518,
+      "offset": 3521,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 3680,
+      "offset": 3683,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 3731,
+      "offset": 3734,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 3776,
+      "offset": 3779,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 4027,
+      "offset": 4030,
       "length": 4,
       "value": "0.40"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4145,
+      "offset": 4148,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 4186,
+      "offset": 4189,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6367,
+      "offset": 4609,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4736,
+      "length": 2,
+      "value": "75"
+    },
+    {
+      "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6583,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6562,
+      "offset": 6778,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 6709,
+      "offset": 6925,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
-      "offset": 6859,
+      "offset": 7075,
       "length": 5,
       "value": "\"✕\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 6939,
+      "offset": 7155,
       "length": 2,
       "value": "28"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7150,
+      "offset": 7366,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
-      "offset": 7292,
+      "offset": 7508,
       "length": 25,
       "value": "\"Đăng ký khuôn mặt\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7445,
+      "offset": 7661,
       "length": 2,
       "value": "18"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7527,
+      "offset": 7743,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7667,
+      "offset": 7883,
       "length": 2,
       "value": "76"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7670,
+      "offset": 7886,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7682,
+      "offset": 7898,
       "length": 3,
       "value": "175"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7686,
+      "offset": 7902,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7697,
+      "offset": 7913,
       "length": 2,
       "value": "80"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7700,
+      "offset": 7916,
       "length": 3,
       "value": "255"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7712,
+      "offset": 7928,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 7832,
+      "offset": 8048,
       "length": 2,
       "value": "14"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 7902,
+      "offset": 8118,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8282,
+      "offset": 8498,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8342,
+      "offset": 8558,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8471,
+      "offset": 8687,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8482,
+      "offset": 8698,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8531,
+      "offset": 8747,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 8580,
+      "offset": 8796,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 8653,
+      "offset": 8869,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8863,
+      "offset": 9079,
       "length": 2,
       "value": "35"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 8908,
+      "offset": 9124,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9099,
+      "offset": 9315,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9209,
+      "offset": 9425,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9407,
+      "offset": 9623,
       "length": 15,
       "value": "\"camera.rotate\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
-      "offset": 9496,
+      "offset": 9712,
       "length": 5,
       "value": "\"⟳\""
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 9593,
+      "offset": 9809,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 9731,
+      "offset": 9947,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 9784,
+      "offset": 10000,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "BooleanLiteral",
-      "offset": 9961,
+      "offset": 10177,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10419,
+      "offset": 10635,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 10799,
+      "offset": 11015,
       "length": 3,
       "value": "160"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11315,
+      "offset": 11531,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11408,
+      "offset": 11624,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11477,
+      "offset": 11693,
       "length": 2,
       "value": "48"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11547,
+      "offset": 11763,
       "length": 2,
       "value": "48"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11698,
+      "offset": 11914,
       "length": 2,
       "value": "24"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 11929,
+      "offset": 12145,
       "length": 1,
       "value": "8"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12163,
+      "offset": 12379,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12316,
+      "offset": 12532,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12503,
+      "offset": 12719,
       "length": 3,
       "value": "-40"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12656,
+      "offset": 12872,
       "length": 2,
       "value": "70"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12728,
+      "offset": 12944,
       "length": 2,
       "value": "70"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 12923,
+      "offset": 13139,
       "length": 3,
       "value": "-40"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13026,
+      "offset": 13242,
       "length": 3,
       "value": "-24"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13103,
+      "offset": 13319,
       "length": 2,
       "value": "48"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13180,
+      "offset": 13396,
       "length": 2,
       "value": "48"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13359,
+      "offset": 13575,
       "length": 2,
       "value": "16"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13457,
+      "offset": 13673,
       "length": 2,
       "value": "32"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 13557,
+      "offset": 13773,
       "length": 3,
       "value": "-32"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "IntegerLiteral",
-      "offset": 16946,
+      "offset": 17162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "FloatLiteral",
-      "offset": 16996,
+      "offset": 17212,
       "length": 3,
       "value": "0.1"
     },
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/UI\/FMMultiStepRegisterViewController.swift",
       "kind": "StringLiteral",
-      "offset": 17080,
+      "offset": 17296,
       "length": 24,
       "value": "\"com.eov.face.detection\""
     },
@@ -19850,7 +20052,7 @@
     {
       "filePath": "\/Users\/eov-mac\/code\/sdk_face\/iOS-SDK-Face\/FaceSDK\/License\/FMServerSync.swift",
       "kind": "IntegerLiteral",
-      "offset": 16967,
+      "offset": 17560,
       "length": 1,
       "value": "0"
     },
